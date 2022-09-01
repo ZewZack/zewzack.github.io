@@ -1,5 +1,2 @@
 # zewzack.github.io
-
-zewzew'in free sitesi. iyi gezinmeler! xd.
-
-qwpoejağposdjqwpoekaczcpqwejqwepoajsdeqw
+welcome to zewzew's git website. have fun xd. maybe you'll find some mysteries ;) 
