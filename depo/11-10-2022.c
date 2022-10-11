@@ -8,5 +8,7 @@ int main()
   
 // Bir öğrencinin 7 adet dersine ait 4 adet sınav sonucu 7x4'lük bir matrise kullanıcı tarafından girilecektir. Sınav sonuçları girildikten sonra her ders için dersten
 // geçip geçmeme durumu ortalama hesaplanarak bulunacaktır.
+  
+// I want to learn and develop programming languages from GitHub for my career.
 
 }
