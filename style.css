@@ -64,3 +64,19 @@ background {
 foreground {
   z-index: 1;
 }
+
+pre {
+  width: fit-content;
+  margin: 0 auto 5x auto;
+  font-family: "Consolas", monospace;
+  text-align: center;
+}
+
+.tiview {
+  margin: 0 auto 10px auto;
+  width: fit-content;
+}
+
+pre#tiresult {
+  font-size: calc(var(--fs) * 0.33) !important;
+}
