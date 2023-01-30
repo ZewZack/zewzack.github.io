@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--head-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style4219.css" />
+    <title>zewzew's website xd.</title>
+  </head>
+  <!--body-->
+  <body>
+    <div id="info">
+      <p>telefonunu</p>
+      <p>çevir</p>
+      <p>ve</p>
+      <p>sesi</p>
+      <p>aç</p>
+      <p>:)</p>
+    </div>
+    <div id="clickme" onclick="showbigDiv()">
+      <p>buraya tıkla :)</p>
+    </div>
+    <div id="bigdiv">
+      <p>selamlar.</p>
+      <p>html / css ve javascript kodlarımı test ediyorum.</p>
+      <p>buraya kadar herhangi bir sorun gördüysen</p>
+      <p>instagram'dan bana yazarsan çok sevinirim :)</p>
+      <p>//zewzack</p>
+    </div>
+    <div id="testbutton" onclick="disableMute()"></div>
+    <div id="fullscrdiv">
+      <video autoplay muted loop id="zewzew">
+        <source src="zewzew.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <!--end of body-->,
+    <script>
+      var vid = document.getElementById("zewzew");
+      function disableMute() {
+        vid.muted = false;
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#testbutton").click();
+      });
+    </script>
+    <script>
+      function clickmegoster() {
+        document.getElementById("clickme").style.visibility = "visible";
+      }
+      setTimeout("clickmegoster()", 6000);
+
+      function showbigDiv() {
+        document.getElementById("bigdiv").style.display = "block";
+        document.getElementById("clickme").style.display = "none";
+      }
+    </script>
+    <!--end of script-->
+  </body>
+</html>
