@@ -1,96 +1,376 @@
-/* =============================================================================
-   HTML5 CSS Reset Minified - Eric Meyer
-   ========================================================================== */
-
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-body{line-height:1}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-nav ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:none}
-a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
-mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
-del{text-decoration:line-through}
-abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
-table{border-collapse:collapse;border-spacing:0}
-hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-input,select{vertical-align:middle}
-li{list-style:none}
-
-
-/* =============================================================================
-   My CSS
-   ========================================================================== */
-
-/* ---- base ---- */
-
-html,body{ 
-	width:100%;
-	height:100%;
-	background:#111;
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
-html{
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+body {
+  margin: 0;
+  font-family: sans-serif;
+  /*   line-height: 1.5; */
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: black;
 }
 
-body{
-  font:normal 75% Arial, Helvetica, sans-serif;
+/* ----- */
+
+p {
+  margin: 0;
+  transform: translate(0%);
+  font-size: 20px;
+  margin-top: 0.75em;
+  margin-bottom: 0em;
 }
 
-canvas{
-  display:block;
-  vertical-align:bottom;
+.background {
+  position: relative;
+  margin: 0;
+  z-index: 0;
 }
-
-
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
+.foreground {
+  margin: 0%;
   position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+.box {
+  position: relative;
+  margin: 0px;
+  text-align: center;
 }
 
-.js-count-particles{
-  font-size: 1.1em;
+.bottombox-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: -20px;
+  text-align: center;
 }
 
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
+/* ---- text gradients ---- */
+
+.insta {
+  background: -webkit-linear-gradient(
+    rgb(245, 133, 41),
+    rgb(254, 218, 119),
+    rgb(221, 42, 123),
+    rgb(129, 52, 175),
+    rgb(81, 91, 212)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
+.twitter {
+  background: -webkit-linear-gradient(
+    rgb(1, 82, 164),
+    rgb(7, 209, 255),
+    rgb(253, 252, 251)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.count-particles{
-  border-radius: 0 0 3px 3px;
+.spotify {
+  background: -webkit-linear-gradient(#141615, #28b35d, #04fe5b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+.linkedin {
+  background: -webkit-linear-gradient(
+    rgb(1, 82, 164),
+    rgb(7, 209, 255),
+    rgb(6, 16, 219)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-/* ---- particles.js container ---- */
+/* images and videos max out at full width */
 
-#particles-js{
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+canvas {
+  display: block;
   width: 100%;
-  height: 100%;
-  background-color: #000000;
-  background-image: url('');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  height: 100vh;
 }
+
+#shadowBox {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Black w/opacity/see-through */
+  border: 3px solid;
+}
+
+.rainbow {
+  text-align: center;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 1px;
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+
+pre {
+  width: fit-content;
+  margin: 0 auto 5x auto;
+  font-family: "Consolas", monospace;
+  text-align: center;
+}
+
+.tiview {
+  margin: 0 auto 10px auto;
+  width: fit-content;
+}
+
+pre#tiresult {
+  font-size: calc(var(--fs) * 0.33) !important;
+}
+
+a:link {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* rainbow a xd */
+
+a.rainbow {
+  color: white;
+  text-decoration: none;
+  -webkit-animation: rainbow 2s linear infinite alternate;
+  -moz-animation: rainbow 2s linear infinite alternate;
+  -ms-animation: rainbow 2s linear infinite alternate;
+  -o-animation: rainbow 2s linear infinite alternate;
+  animation: rainbow 2s linear infinite alternate;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: gold;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: yellowgreen;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: violet;
+  }
+  90% {
+    color: magenta;
+  }
+  100% {
+    color: indigo;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: gold;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: yellowgreen;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: violet;
+  }
+  90% {
+    color: magenta;
+  }
+  100% {
+    color: indigo;
+  }
+}
+@-ms-keyframes rainbow {
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: gold;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: yellowgreen;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: violet;
+  }
+  90% {
+    color: magenta;
+  }
+  100% {
+    color: indigo;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: gold;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: yellowgreen;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: violet;
+  }
+  90% {
+    color: magenta;
+  }
+  100% {
+    color: indigo;
+  }
+}
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  10% {
+    color: orange;
+  }
+  20% {
+    color: gold;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: yellowgreen;
+  }
+  50% {
+    color: green;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: violet;
+  }
+  90% {
+    color: magenta;
+  }
+  100% {
+    color: indigo;
+  }
+}
+
+/* rainbow a xd */
