@@ -26,11 +26,6 @@ p {
   font-size: 20px;
   margin-top: 0.75em;
   margin-bottom: 0em;
-  display: inline-block; 
-  width: auto; 
-  height: auto; 
-  max-width: 100%; 
-  word-wrap: break-word;
 }
 
 .background {
